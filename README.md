@@ -1,1 +1,2 @@
-# hawking-bros-project
+# Hawking Bros
+## Курсовой проект
