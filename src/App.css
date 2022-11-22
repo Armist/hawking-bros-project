@@ -1,0 +1,24 @@
+.App {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.block {
+    width: 300px;
+    border: 1px solid greenyellow;
+    border-radius: 10px;
+    padding: 10px;
+    transition: all .3s linear;
+}
+
+.block__button {
+    width: 100%;
+}
+
+.block__item {
+    margin-bottom: 10px;
+}
