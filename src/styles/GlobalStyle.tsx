@@ -5,9 +5,6 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
     font-family: 'Inter', sans-serif;
   }
 
@@ -19,8 +16,14 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: inherit;
   }
-  
+
   img {
     width: 100%;
+  }
+
+  button {
+    cursor: pointer;
+    border: 0;
+    background-color: inherit;
   }
 `

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import LogoImg from "../../assets/logo.png";
+import React from "react";
+import {Link} from "react-router-dom";
 
 const StyledLogo = styled.img.attrs(props => ({
     src: props.src,
@@ -7,8 +9,15 @@ const StyledLogo = styled.img.attrs(props => ({
 }))`
   height: 19px;
   width: 134px;
+  cursor: pointer;
 `
 
-export const Logo = () => {
-    return <StyledLogo alt={'Logo'} src={LogoImg}/>
+interface ILogo {
+    onClick: () => void
+}
+
+export const Logo: React.FC<ILogo> = ({onClick}) => {
+    return <Link to={'/'}>
+        <StyledLogo alt={'Logo'} src={LogoImg} onClick={onClick}/>
+    </Link>
 }

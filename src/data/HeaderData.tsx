@@ -1,61 +1,192 @@
-import {FaMapMarkerAlt} from "react-icons/fa";
+import {FaMapMarkerAlt, FaRegHeart} from "react-icons/fa";
+import {theme} from "../styles/theme";
 
 export type HeaderLink = {
-    id: number
-    path: string
+    path?: string
     text: string
     icon?: JSX.Element
+    color: string
+    dropdown?: DropdownItem[]
 }
 
-export const headerTopNavigation: HeaderLink[] = [
+export type DropdownItem = {
+    path: string
+    text: string
+}
+
+export const headerTopLeftNavigation: HeaderLink[] = [
     {
-        id: 1,
         path: '/',
-        text: 'Главная'
+        text: 'Главная',
+        color: theme.colors.gray
     },
     {
-        id: 2,
         path: '/news',
-        text: 'Новости'
+        text: 'Новости',
+        color: theme.colors.gray
     },
     {
-        id: 3,
         path: '/tariffs',
-        text: 'Размещение и тарифы'
+        text: 'Размещение и тарифы',
+        color: theme.colors.gray
     },
     {
-        id: 4,
         path: '/map',
         text: 'Объявления на карте',
-        icon: <FaMapMarkerAlt size={10}/>
+        icon: <FaMapMarkerAlt size={10}/>,
+        color: theme.colors.gray
     },
     {
-        id: 5,
         path: '/contacts',
-        text: 'Контакты'
+        text: 'Контакты',
+        color: theme.colors.gray
     },
 ]
 
-export const headerBottomNavigation = [
+export const headerTopRightNavigation: HeaderLink[] = [
     {
-        id: 1,
-        path: '/flats',
+        path: '/liked',
+        text: 'Закладки',
+        icon: <FaRegHeart size={16}/>,
+        color: theme.colors.gray
+    },
+    {
+        path: '/login',
+        text: 'Вход и регистрация',
+        color: theme.colors.violet
+    },
+]
+
+export const headerBottomNavigation: HeaderLink[] = [
+    {
         text: 'Квартиры на сутки',
-        icon: <FaMapMarkerAlt size={15}/>
+        icon: <FaMapMarkerAlt size={15}/>,
+        color: theme.colors.black,
+        dropdown: [
+            {
+                path: '/flats/minsk',
+                text: 'Квартиры на сутки в Минске'
+            },
+            {
+                path: '/flats/gomel',
+                text: 'Квартиры на сутки в Гомеле'
+            },
+            {
+                path: '/flats/brest',
+                text: 'Квартиры на сутки в Бресте'
+            },
+            {
+                path: '/flats/vitebsk',
+                text: 'Квартиры на сутки в Витебске'
+            },
+            {
+                path: '/flats/grodno',
+                text: 'Квартиры на сутки в Гродно'
+            },
+            {
+                path: '/flats/mogilev',
+                text: 'Квартиры на сутки в Могилеве'
+            }
+        ]
     },
     {
-        id: 2,
         path: '/cottages',
-        text: 'Коттеджи и усадьбы'
+        text: 'Коттеджи и усадьбы',
+        color: theme.colors.black
     },
     {
-        id: 3,
         path: '/saunas',
-        text: 'Бани и сауны'
+        text: 'Бани и сауны',
+        color: theme.colors.black
     },
     {
-        id: 4,
         path: '/cars',
-        text: 'Авто на прокат'
+        text: 'Авто на прокат',
+        color: theme.colors.black
     }
+]
+
+export const unitedHeaderData: HeaderLink[] = [
+    {
+        path: '/',
+        text: 'Главная',
+        color: theme.colors.gray
+    },
+    {
+        path: '/news',
+        text: 'Новости',
+        color: theme.colors.gray
+    },
+    {
+        path: '/tariffs',
+        text: 'Размещение и тарифы',
+        color: theme.colors.gray
+    },
+    {
+        path: '/map',
+        text: 'Объявления на карте',
+        color: theme.colors.gray
+    },
+    {
+        path: '/contacts',
+        text: 'Контакты',
+        color: theme.colors.gray
+    },
+    {
+        text: 'Квартиры на сутки',
+        icon: <FaMapMarkerAlt size={15}/>,
+        color: theme.colors.black,
+        dropdown: [
+            {
+                path: '/flats/minsk',
+                text: 'Квартиры на сутки в Минске'
+            },
+            {
+                path: '/flats/gomel',
+                text: 'Квартиры на сутки в Гомеле'
+            },
+            {
+                path: '/flats/brest',
+                text: 'Квартиры на сутки в Бресте'
+            },
+            {
+                path: '/flats/vitebsk',
+                text: 'Квартиры на сутки в Витебске'
+            },
+            {
+                path: '/flats/grodno',
+                text: 'Квартиры на сутки в Гродно'
+            },
+            {
+                path: '/flats/mogilev',
+                text: 'Квартиры на сутки в Могилеве'
+            }
+        ]
+    },
+    {
+        path: '/cottages',
+        text: 'Коттеджи и усадьбы',
+        color: theme.colors.black
+    },
+    {
+        path: '/saunas',
+        text: 'Бани и сауны',
+        color: theme.colors.black
+    },
+    {
+        path: '/cars',
+        text: 'Авто на прокат',
+        color: theme.colors.black
+    },
+    {
+        path: '/liked',
+        text: 'Закладки',
+        icon: <FaRegHeart size={16}/>,
+        color: theme.colors.gray
+    },
+    {
+        path: '/login',
+        text: 'Вход и регистрация',
+        color: theme.colors.violet
+    },
 ]

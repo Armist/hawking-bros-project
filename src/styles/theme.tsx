@@ -2,7 +2,10 @@ export const theme = {
     // *** Colors ***
     colors: {
         violet: '#664EF9',
-        yellow: '#FFD54F'
+        yellow: '#FFD54F',
+        gray: '#8291A3',
+        black: '#1E2123',
+        red: '#EB5757'
     },
     // *** FONT SIZES ***
     fontSizes: {
@@ -34,5 +37,16 @@ export const theme = {
         smallTitle: '30px',
         title: '100%',
         largeTitle: '73px'
+    },
+    breakpoints: {
+        mobile: '375px',
+        tablet: '768px',
+        laptop: '1280px',
+        desktop: '1980px'
+    },
+    header: {
+        height: '100px',
+        topHeight: '40px',
+        bottomHeight: '60px'
     }
 }
