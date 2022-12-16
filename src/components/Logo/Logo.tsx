@@ -4,8 +4,8 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 const StyledLogo = styled.img.attrs(props => ({
-    src: props.src,
-    alt: props.alt
+  src: props.src,
+  alt: props.alt
 }))`
   height: 19px;
   width: 134px;
@@ -13,11 +13,12 @@ const StyledLogo = styled.img.attrs(props => ({
 `
 
 interface ILogo {
-    onClick: () => void
+  onClick?: () => void
+  onMouseEnter?: () => void
 }
 
-export const Logo: React.FC<ILogo> = ({onClick}) => {
-    return <Link to={'/'}>
-        <StyledLogo alt={'Logo'} src={LogoImg} onClick={onClick}/>
-    </Link>
+export const Logo: React.FC<ILogo> = ({onClick, onMouseEnter}) => {
+  return <Link to={'/'} onClick={onClick} onMouseEnter={onMouseEnter} style={{marginRight: -10}}>
+    <StyledLogo alt={'Logo'} src={LogoImg}/>
+  </Link>
 }

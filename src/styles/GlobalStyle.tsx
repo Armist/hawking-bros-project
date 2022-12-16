@@ -1,4 +1,5 @@
 import {createGlobalStyle, GlobalStyleComponent} from 'styled-components'
+import {theme} from "./theme";
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -25,5 +26,9 @@ export const GlobalStyle = createGlobalStyle`
     cursor: pointer;
     border: 0;
     background-color: inherit;
+  }
+
+  #root {
+    height: 100vh;
   }
 `

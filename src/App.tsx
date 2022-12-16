@@ -6,11 +6,11 @@ import {theme} from "./styles/theme";
 
 export const App = () => {
     return (
-        <div className="App">
+        <>
             <GlobalStyle/>
             <ThemeProvider theme={theme}>
                 <RouterProvider router={router}/>
             </ThemeProvider>
-        </div>
+        </>
     )
 }
