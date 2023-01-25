@@ -21,19 +21,27 @@ export const StyledFooter = styled.footer`
 `
 
 export const FooterInner = styled.div`
+  max-width: 100%;
+  width: 100%;
   display: grid;
   grid-template-columns: minmax(100px, 300px) 1fr;
   grid-gap: 30px;
 
   padding: 40px 80px 46px 0;
 
-  @media (max-width: ${theme.breakpoints.tablet}) {
-    padding: 40px 0;
-  }
   
   @media (max-width: ${theme.breakpoints.laptop}) {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, auto);
+  }
+
+  @media (max-width: ${theme.breakpoints.header}) {
+    padding: 28px 0;
+    grid-gap: 24px;
+  }
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    grid-gap: 20px;
   }
 `
 
@@ -45,6 +53,16 @@ export const FooterLeft = styled.div`
 
   @media (max-width: ${theme.breakpoints.laptop}) {
     order: 1;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media (max-width: ${theme.breakpoints.header}) {
+    width: 100%;
+    flex-direction: column;
   }
 `
 
@@ -58,6 +76,12 @@ export const FooterLogo = styled.div`
     font-size: ${theme.fontSizes.xs};
     line-height: ${theme.lineHeights.xs};
     font-weight: ${theme.weights.medium};
+  }
+
+  @media (max-width: ${theme.breakpoints.header}) {
+    span {
+      display: none;
+    }
   }
 `
 
@@ -75,8 +99,14 @@ export const FooterInfo = styled.span`
   }
 
   @media (max-width: ${theme.breakpoints.laptop}) {
-    flex-direction: row;
-    justify-content: space-between;                
+    flex-direction: column;
+    span {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: ${theme.breakpoints.header}) {
+    display: none;
   }
 `
 
@@ -89,6 +119,13 @@ export const FooterRight = styled.div`
   @media (max-width: ${theme.breakpoints.laptop}) {
     order: -1;
   }
+
+  @media (max-width: ${theme.breakpoints.header}) {
+    order: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `
 
 export const FooterNavigation = styled.nav`
@@ -97,6 +134,10 @@ export const FooterNavigation = styled.nav`
   display: grid;
   grid-template-columns: 560px 156px;
   grid-gap: 98px;
+
+  @media (max-width: ${theme.breakpoints.header}) {
+    display: none;
+  }
 `
 
 export const FooterCategories = styled.ul`
@@ -124,11 +165,15 @@ export const FooterCategory = styled.li`
   &:last-child {
     grid-column: span 2;
   }
+
+  @media (max-width: ${theme.breakpoints.header}) {
+    width: 100%;
+  }
 `
 
 export const FooterCategoryList = styled.ul`
   margin-top: 12px;
-  width: inherit;
+  width: 100%;
   
   display: grid;
   grid-template-columns: 136px 152px;
@@ -136,6 +181,10 @@ export const FooterCategoryList = styled.ul`
   grid-auto-flow: column;
   grid-gap: 8px 53px;
   max-width: 341px;
+
+  @media (max-width: ${theme.breakpoints.header}) {
+    
+  }
 `
 
 export const FooterCategoryItem = styled.li`
@@ -150,6 +199,11 @@ export const FooterPages = styled.ul`
   flex-direction: column;
   max-height: 96px;
   height: 100%;
+
+
+  @media (max-width: ${theme.breakpoints.header}) {
+    width: 100%;
+  }
 `
 
 export const FooterPage = styled.li`
@@ -168,18 +222,35 @@ export const FooterBottom = styled.div`
   display: grid;
   grid-template-columns:1fr 340px;
   grid-gap: 20px;
+
+  @media (max-width: ${theme.breakpoints.header}) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `
 
 export const FooterSocials = styled.div`
   display: flex;
-  flex-direction: row;`
+  flex-direction: row;
+  width: 100%;
+
+  @media (max-width: ${theme.breakpoints.header}) {
+    justify-content: center;
+    align-items: center;
+  }
+`
 
 export const FooterSocialsText = styled.span`
   margin-right: ${px2vw(1920, 24)};
   display: flex;
   align-items: center;
   font-weight: ${theme.weights.medium};
-  ${mText}
+  ${mText};
+
+  @media (max-width: ${theme.breakpoints.header}) {
+    display: none;
+  }
 `
 
 export const FooterSocialsLinks = styled.div`
@@ -187,6 +258,10 @@ export const FooterSocialsLinks = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 120px;
+
+  @media (max-width: ${theme.breakpoints.header}) {
+    width: 100px;
+  }
 `
 
 export const FooterSocialsLink = styled.a`
@@ -199,6 +274,11 @@ export const FooterSocialsLink = styled.a`
   &:not(:last-child) {
     margin-right: ${px2vw(1920, 15)};
   }
+
+  @media (max-width: ${theme.breakpoints.header}) {
+    width: 20px;
+    height: 20px;
+  }
 `
 
 export const FooterPayment = styled.div`
@@ -206,6 +286,10 @@ export const FooterPayment = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 15px;
+
+  @media (max-width: ${theme.breakpoints.header}) {
+    display: none;
+  }
 `
 
 export const FooterPaymentItem = styled.img.attrs(props => ({
